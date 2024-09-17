@@ -1208,10 +1208,16 @@ function fcpoValidateCardExpireDate(response) {
  *
  */
 function fcpoValidateCCHostedInputs() { // Function called by submitting PAY-button
+    console.log(`isComplete: ${JSON.stringify(oFcpoIframes.isComplete())}`);
+    console.log(`isCardTypeComplete: ${JSON.stringify(oFcpoIframes.isCardTypeComplete())}`);
+    console.log(`isCardpanComplete: ${JSON.stringify(oFcpoIframes.isCardpanComplete())}`);
+    console.log(`isExpireMonthComplete: ${JSON.stringify(oFcpoIframes.isComplete())}`);
+    console.log(`isExpireYearComplete: ${JSON.stringify(oFcpoIframes.isComplete())}`);
     if (oFcpoIframes.isComplete()) {
         return 1;
     } else {
-        if(oFcpoIframes.isCardTypeComplete() &&
+        if(
+            oFcpoIframes.isCardTypeComplete() &&
             oFcpoIframes.isCardpanComplete() &&
             oFcpoIframes.isExpireMonthComplete() &&
             oFcpoIframes.isExpireYearComplete())
